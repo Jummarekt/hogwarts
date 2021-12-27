@@ -1,7 +1,9 @@
 const express = require('express')
+const bodyParser = require ('body-parser')
 const {pool} = require('./pgConfig')
 const port = process.env.PORT || 8080
 const app = express()
+app.use(bodyParser.urlencoded())
 
 app.get('/', (req, res) =>
 {
